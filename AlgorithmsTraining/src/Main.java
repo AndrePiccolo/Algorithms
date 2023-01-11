@@ -121,8 +121,18 @@ public class Main {
 //			System.out.println(result + " ");
 //		}
 		
-		List<Integer> orderList = new ArrayList<>(Arrays.asList(0, 5, 2, 1, 6, 3));
-		Quicksort algor = new Quicksort();
-		System.out.println(algor.quickSelection(6,orderList, 0, 5));
+//		List<Integer> orderList = new ArrayList<>(Arrays.asList(0, 5, 2, 1, 6, 3));
+//		Quicksort algor = new Quicksort();
+//		System.out.println(algor.quickSelection(6,orderList, 0, 5));
+		
+		LinkedList test = new LinkedList();
+		test.insertEnd("Hi");
+		test.insertEnd(" how");
+		test.insertFront(" are");
+		
+		System.out.print(test.removeEnd());
+		System.out.print(test.removeFront());
+		System.out.print(test.removeFront());
+		
 	}
 }
