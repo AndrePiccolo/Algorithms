@@ -1,3 +1,4 @@
+import java.security.KeyStore.Entry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -125,14 +126,27 @@ public class Main {
 //		Quicksort algor = new Quicksort();
 //		System.out.println(algor.quickSelection(6,orderList, 0, 5));
 		
-		LinkedList test = new LinkedList();
-		test.insertEnd("Hi");
-		test.insertEnd(" how");
-		test.insertFront(" are");
+//		LinkedList test = new LinkedList();
+//		test.insertEnd("Hi");
+//		test.insertEnd(" how");
+//		test.insertFront(" are");
+//		
+//		System.out.print(test.removeEnd());
+//		System.out.print(test.removeFront());
+//		System.out.print(test.removeFront());
 		
-		System.out.print(test.removeEnd());
-		System.out.print(test.removeFront());
-		System.out.print(test.removeFront());
+		
+//		HashMap<String, String> hashedArray1 = new HashMap<>();
+//		
+//		hashedArray1.put("Name", "Andre");
+//		hashedArray1.put("Name", "Piccolo");
+//		
+//		System.out.println( hashedArray1.get("Name"));		
+//		hashedArray1.forEach((key, value) -> {
+//		    if (value.equals("Andre")) {
+//		        System.out.print(key + " ");
+//		    }
+//		});
 		
 	}
 }
