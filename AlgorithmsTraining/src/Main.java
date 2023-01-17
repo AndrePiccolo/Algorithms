@@ -148,5 +148,17 @@ public class Main {
 //		    }
 //		});
 		
+		Heap heap = new Heap();
+		heap.insert(55);
+		heap.insert(22);
+		heap.insert(34);
+		heap.insert(10);
+		heap.insert(2);
+		heap.insert(99);
+		heap.insert(68);
+		
+		while(heap.getHeap().size() > 0) {
+			System.out.println(heap.delete() + " ");
+		}
 	}
 }
