@@ -148,17 +148,34 @@ public class Main {
 //		    }
 //		});
 		
-		Heap heap = new Heap();
-		heap.insert(55);
-		heap.insert(22);
-		heap.insert(34);
-		heap.insert(10);
-		heap.insert(2);
-		heap.insert(99);
-		heap.insert(68);
+//		Heap heap = new Heap();
+//		heap.insert(55);
+//		heap.insert(22);
+//		heap.insert(34);
+//		heap.insert(10);
+//		heap.insert(2);
+//		heap.insert(99);
+//		heap.insert(68);
+//		
+//		while(heap.getHeap().size() > 0) {
+//			System.out.println(heap.delete() + " ");
+//		}
 		
-		while(heap.getHeap().size() > 0) {
-			System.out.println(heap.delete() + " ");
+		Trie trieTree = new Trie();
+		trieTree.insert("get");
+		trieTree.insert("go");
+		trieTree.insert("got");
+		trieTree.insert("gotten");
+		trieTree.insert("hall");
+		trieTree.insert("ham");
+		trieTree.insert("hammer");
+		trieTree.insert("hill");
+		trieTree.insert("zebra");
+		
+		String autocomplete = "ha";
+		
+		for (String item : trieTree.autoComplete(autocomplete)) {
+			System.out.println("Word: "+ autocomplete + item);
 		}
 	}
 }
