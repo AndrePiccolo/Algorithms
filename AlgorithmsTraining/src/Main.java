@@ -161,21 +161,48 @@ public class Main {
 //			System.out.println(heap.delete() + " ");
 //		}
 		
-		Trie trieTree = new Trie();
-		trieTree.insert("get");
-		trieTree.insert("go");
-		trieTree.insert("got");
-		trieTree.insert("gotten");
-		trieTree.insert("hall");
-		trieTree.insert("ham");
-		trieTree.insert("hammer");
-		trieTree.insert("hill");
-		trieTree.insert("zebra");
+//		Trie trieTree = new Trie();
+//		trieTree.insert("get");
+//		trieTree.insert("go");
+//		trieTree.insert("got");
+//		trieTree.insert("gotten");
+//		trieTree.insert("hall");
+//		trieTree.insert("ham");
+//		trieTree.insert("hammer");
+//		trieTree.insert("hill");
+//		trieTree.insert("zebra");
+//		
+//		String autocomplete = "ha";
+//		
+//		for (String item : trieTree.autoComplete(autocomplete)) {
+//			System.out.println("Word: "+ autocomplete + item);
+//		}
 		
-		String autocomplete = "ha";
+		DijkstrasVertex atlanta = new DijkstrasVertex("Atlanta");
+		DijkstrasVertex boston = new DijkstrasVertex("Boston");
+		DijkstrasVertex chicago = new DijkstrasVertex("Chicago");
+		DijkstrasVertex denver = new DijkstrasVertex("Denver");
+		DijkstrasVertex elPasso = new DijkstrasVertex("El Passo");
 		
-		for (String item : trieTree.autoComplete(autocomplete)) {
-			System.out.println("Word: "+ autocomplete + item);
+		atlanta.addRoute(boston, 100.0);
+		atlanta.addRoute(denver, 160.0);
+		
+		boston.addRoute(chicago, 120.0);
+		boston.addRoute(denver, 180.0);
+		
+		chicago.addRoute(elPasso, 80.0);
+		
+		denver.addRoute(chicago, 40.0);
+		denver.addRoute(elPasso, 140.0);
+		
+		Dijkstras algor = new Dijkstras();
+		
+		System.out.print("Short path: ");
+		for (String vertex : algor.shortestPath(atlanta, elPasso)) {
+			System.out.print(vertex + " - ");
 		}
+		
+		System.out.println("");
+		System.out.println("Lower Value: " + algor.getLowerValue());
 	}
 }
