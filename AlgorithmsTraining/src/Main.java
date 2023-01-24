@@ -149,16 +149,16 @@ public class Main {
 //		});
 		
 //		Heap heap = new Heap();
-//		heap.insert(55);
-//		heap.insert(22);
-//		heap.insert(34);
-//		heap.insert(10);
-//		heap.insert(2);
-//		heap.insert(99);
-//		heap.insert(68);
+//		heap.insertMinValue(55);
+//		heap.insertMinValue(22);
+//		heap.insertMinValue(34);
+//		heap.insertMinValue(10);
+//		heap.insertMinValue(2);
+//		heap.insertMinValue(99);
+//		heap.insertMinValue(68);
 //		
 //		while(heap.getHeap().size() > 0) {
-//			System.out.println(heap.delete() + " ");
+//			System.out.println(heap.deleteSmallerValue() + " ");
 //		}
 		
 //		Trie trieTree = new Trie();

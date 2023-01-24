@@ -13,7 +13,7 @@ public class Dijkstras {
 		Map<String, Double> lowestValuesTable = new HashMap<>();
 		Map<String, String> previousVertexLowerTable = new HashMap<>();
 		
-		ArrayList<DijkstrasVertex> unvisitedVertex = new ArrayList<>();
+		HeapDijkstras unvisitedVertex = new HeapDijkstras();
 		Map<String, Boolean> visitedVertex = new HashMap<>();
 		
 		lowestValuesTable.put(vertexOrigin.value, 0.0);
@@ -22,11 +22,13 @@ public class Dijkstras {
 		
 		while(currentVertex != null) {
 			visitedVertex.put(currentVertex.value, true);
-			unvisitedVertex.remove(currentVertex);
 			
 			for (Map.Entry<DijkstrasVertex, Double> entry : currentVertex.routes.entrySet()) {
 				if(!visitedVertex.containsKey(entry.getKey().value)) {
-					unvisitedVertex.add(entry.getKey());
+					unvisitedVertex.insert(entry.getKey(), 
+							(lowestValuesTable.get(entry.getKey().value) == null)?
+									Double.POSITIVE_INFINITY:
+										lowestValuesTable.get(entry.getKey().value));
 				}
 				
 				Double valueThroughCurrentVertex = lowestValuesTable.get(currentVertex.value)
@@ -38,17 +40,7 @@ public class Dijkstras {
 					previousVertexLowerTable.put(entry.getKey().value, currentVertex.value);
 				}
 			}
-			if(unvisitedVertex.size() <= 0) {
-				currentVertex = null;
-			}else {
-				Double minValue = 0.0;
-				for (DijkstrasVertex vertex : unvisitedVertex) {
-					if(minValue == 0.0 || minValue > lowestValuesTable.get(vertex.value)) {
-						minValue = lowestValuesTable.get(vertex.value);
-						currentVertex = vertex;
-					}
-				}	
-			}
+			currentVertex = unvisitedVertex.delete();
 		}
 		
 		this.lowerValue = lowestValuesTable.get(vertexDestiny.value);
